@@ -11,19 +11,25 @@
 		"check-eslint": "next lint",
 		"check-lint": "eslint --ext ts --ext tsx --ext js --fix",
 		"format": "prettier --write .",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"styles:watch": "npx tailwindcss -i src/styles/globals.css -o src/styles/output.css --watch",
+		"dev": "bun dev & bun run styles:watch",
+		"dev:styles": "bun dev & bun styles:watch",
+		"cc": "rm -rf ~/.bun/install/cache"
 	},
 	"dependencies": {
 		"next": "latest",
 		"react": "^18",
 		"react-dom": "^18",
-		"react-is": "^18"
+		"react-is": "^18",
+		"tailwindcss": "^3.3.1"
 	},
 	"devDependencies": {
 		"@types/node": "18.15.11",
 		"@types/react": "^18",
 		"@typescript-eslint/eslint-plugin": "^5.57.1",
-		"bun-framework-next": "^12.2",
+		"autoprefixer": "^10.4.14",
+		"bun-framework-next": "^12.2.5",
 		"eslint": "^8.37.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-config-standard-with-typescript": "^34.0.1",
@@ -35,6 +41,7 @@
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.0",
 		"pinst": "^3.0.0",
+		"postcss": "^8.4.21",
 		"prettier": "^2.8.7",
 		"react-refresh": "0.10.0",
 		"typescript": "^5.0.3"
